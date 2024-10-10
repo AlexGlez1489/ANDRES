@@ -1,0 +1,81 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    color: black;
+    font-size: 11px;
+    font-weight: 400;
+    transition: .3s ease-in-out;
+}
+
+a:hover {
+    color: #6c5343;
+    transform: scale(1.05);
+}
+
+.boton {
+    font-size: 11px;
+    background-color: #4D3A2D;
+    transition: .3s ease-in-out;
+}
+
+.boton:hover {
+    background-color: #6c5343;
+    transform: scale(1.05);
+}
+
+.main-txt h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #4D3A2D;
+}
+
+.main-txt h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4D3A2D;
+}
+
+.contenedor-txt {
+    padding: 0 2rem 0 0;
+}
+
+.contenedor-cartas {
+    background-repeat: repeat;
+    background-size: cover;
+    max-width: 200px;
+}
+
+/* Aseguramos que el carrusel tenga un margen adecuado */
+.carrusel {
+    margin: 2rem 0; /* Separación de 2rem en pantallas grandes */
+}
+
+@media (max-width: 768px) {
+    .carrusel {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0; /* Menor separación en dispositivos móviles */
+    }
+    .contenedor {
+        flex-direction: column;
+    }
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    margin: 4rem 0 2rem 5rem;
+}
+
+.contenedor-swiper {
+    display: flex;
+    flex-direction: row; /* Asegúrate de que esté en fila */
+}
