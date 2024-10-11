@@ -1,30 +1,105 @@
 body {
     font-family: 'Inter', sans-serif;
 }
+ /* Estilos para el loader */
+ .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
 
+/* Ocultar el contenido mientras se carga */
+.hidden {
+    display: none;
+}
+
+/* Animación de escala */
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scaling {
+    animation: scaleAnimation 1.5s infinite; /* Duración de 1.5 segundos */
+}
 a {
     color: black;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 400;
     transition: .3s ease-in-out;
 }
-
+span {
+    font-weight: 700;
+}
 a:hover {
     color: #6c5343;
     transform: scale(1.05);
 }
+/* Globales */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
 
+footer img {
+    width: 400px;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.padding {
+    padding-bottom: 2rem;
+}
+
+.upper {
+    text-transform: uppercase;
+}
 .boton {
-    font-size: 11px;
+    font-size: 14px;
     background-color: #4D3A2D;
+    color: #fff;
     transition: .3s ease-in-out;
+    padding: .3rem;
+    border-radius: .5rem;
 }
 
 .boton:hover {
     background-color: #6c5343;
     transform: scale(1.05);
 }
+.redes {
+    padding: 2rem 0 .3rem 0;
+    gap: 1rem;
+}
 
+.redes a:hover {
+    transform: scale(1.2);
+}
+.redes img {
+    width: 25px;
+}
 .main-txt h2 {
     font-size: 2.5rem;
     font-weight: 500;
@@ -38,19 +113,101 @@ a:hover {
 }
 
 .contenedor-txt {
+
     padding: 0 2rem 0 0;
 }
 
 .contenedor-cartas {
-    background-repeat: repeat;
-    background-size: cover;
+    display: flex;
     max-width: 200px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
+
+.contenedor-cartas:hover {
+    transform: scale(1.05) !important;
+}
+
+.contenedor-guia {
+    max-width: 70rem;
+    margin: 0 auto;
+    display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+}
+
+.cont-txt {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+
 
 /* Aseguramos que el carrusel tenga un margen adecuado */
 .carrusel {
     margin: 2rem 0; /* Separación de 2rem en pantallas grandes */
 }
+
+.video {
+    display: flex;
+    justify-content: center;
+    border-radius: 20rem;
+    padding-bottom: 2rem;
+}
+
+
+.guia {
+    padding: 2rem;
+    background-color:rgb(248, 239, 239);
+
+}
+
+.guia h2 {
+    font-size: 1.2rem;
+}
+.guia-img {
+    display: flex;
+    justify-content: right;
+}
+.guia-img img {
+    width: 70%;
+}
+/* Estilo personalizado para los botones de Swiper */
+.swiper-button-prev,
+.swiper-button-next {
+    opacity: 0;
+    padding: 20px !important;
+    background-color: #4D3A2D; /* Color de fondo */
+    color: rgb(255, 255, 255); /* Color de texto */
+    border-radius: 50%; /* Para hacer que el botón sea redondo */
+    display: flex; /* Para centrar el contenido dentro */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Suaviza la transición */
+}
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+    transition: .5s ease-in-out;
+    opacity: 1; /* Mostrar las flechas al pasar el mouse */
+}
+/* Hover effect */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+
+    background-color: #6F5B47; /* Color de fondo en hover */
+    transform: scale(1.1); /* Aumenta un poco el tamaño */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para un efecto de elevación */
+}
+
+/* Opcional: Ocultar el color de fondo predeterminado de los botones */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 15px !important;
+    color: rgb(255, 255, 255); /* Cambia el color de la flecha si es necesario */
+}
+
 
 @media (max-width: 768px) {
     .carrusel {
@@ -60,7 +217,56 @@ a:hover {
     }
     .contenedor {
         flex-direction: column;
+        margin:0 1rem!important;
+        padding: 0 2rem;
     }
+    .contenedor-txt {
+
+        padding:1rem 0;
+    }
+    .contenedor-guia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .video {
+        padding-top: 2rem;
+    }
+    .guia {
+        border-radius: 5rem;
+        margin: 1rem;
+    }
+    
+    p {
+        font-size: 10px;
+    }
+    .guia-img img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    /* Asegura que el contenedor del slider ocupe el espacio completo */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+/* Asegura que las cartas del slider ocupen el ancho completo en pantallas pequeñas */
+.contenedor-cartas {
+    width: 100%;
+    height: auto;  /* Asegura que la altura de las cartas sea adaptable */
+}
+
+.video {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
 }
 
 
@@ -72,10 +278,11 @@ a:hover {
 .contenedor {
     display: flex;
     align-items: center;
-    margin: 4rem 0 2rem 5rem;
+    margin: 4rem 0 2rem 8rem;
 }
 
 .contenedor-swiper {
     display: flex;
     flex-direction: row; /* Asegúrate de que esté en fila */
 }
+

@@ -7,33 +7,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/ANDRES/assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+
     <title>ANDRES</title>
-    <style>
-        /* Aseguramos que el carrusel tenga un margen adecuado */
-        .carrusel {
-            margin: 2rem 0; /* Separación de 2rem en pantallas grandes */
-        }
-
-        @media (max-width: 640px) {
-            .carrusel {
-                margin: 1rem 0; /* Menor separación en dispositivos móviles */
-            }
-        }
-
-        .navigation-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem; /* Espacio entre el texto y las flechas */
-        }
-    </style>
+   
 </head>
 
 <body>
+
+
+
+    <!-- Loader Animation -->
+    <div id="loader" class="loader">
+        <img src="assets/img/logo.png" alt="Cargando..." class="h-20 scaling"> <!-- Cambia el tamaño según necesites -->
+        <p class="mt-4 text-lg text-gray-600">Cargando...</p>
+    </div>
     <!-- MENU -->
-    <nav class="bg-white shadow-md p-4">
+    <nav class="bg-white shadow-md p-4 up">
         <div class="flex items-center gap-4 navbar">
             <div class="md:hidden">
                 <button id="menu-btn" class="focus:outline-none">
@@ -64,115 +57,165 @@
     </nav>
 
     <main>
+
         <section class="contenedor">
-            <div class="contenedor-txt text-center mb-8">
+            <div class="contenedor-txt">
                 <div class="main-txt">
-                    <h2>Invierte</h2>
-                </div>
-                <div class="main-txt">
-                    <h2>Protege</h2>
-                </div>
-                <div class="main-txt">
-                    <h3>Crece</h3>
+                    <h2 class="text-4xl font-bold mb-4 left">Invierte</h2>
+                    <h2 class="text-4xl font-bold mb-4 right">Protege</h2>
+                    <h3 class="text-3xl font-semibold up">Crece</h3>
                 </div>
             </div>
-
-            <div class="swiper mySwiper carrusel">
+        
+            <div class="swiper mySwiper carrusel left justify-center">
                 <div class="swiper-wrapper contenedor-swiper">
                     <!-- Carta 1 -->
-                    <div class="contenedor-cartas swiper-slide  rounded-lg shadow-lg">
-                        <img src="/ANDRES/assets/img/persona1.png" alt="Image 1" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3>Título de la Carta 1</h3>
-                            <p>Descripción breve de la carta 1.</p>
-                            <a href="#" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">Ver más</a>
+                    <div class="contenedor-cartas swiper-slide rounded-xl overflow-hidden shadow-lg bg-transparent relative">
+                        <img src="assets/img/persona1.jpeg" alt="Image 1" class="w-full h-80 object-cover">
+                        <div class=" text-center absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-10 rounded-lg">
+                            <h3 class="text-lg font-semibold">Salud</h3>
+                            <p class="mt-2">Enfocate en tu bienestar sin pensar en las cuentas</p>
+                            <a href="#" class="inline-block mt-4 bg-white text-[#4D3A2D] font-bold px-4 py-1 rounded-lg">Ver más</a>
                         </div>
                     </div>
+            
                     <!-- Carta 2 -->
-                    <div class="contenedor-cartas swiper-slide bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://via.placeholder.com/400x300" alt="Image 2" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3>Título de la Carta 2</h3>
-                            <p>Descripción breve de la carta 2.</p>
-                            <a href="#" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">Ver más</a>
+                    <div class="contenedor-cartas swiper-slide rounded-xl overflow-hidden shadow-lg bg-transparent relative">
+                        <img src="assets/img/Rectangle 284.png" alt="Image 2" class="w-full h-80 object-cover">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-10 rounded-lg text-center">
+                            <h3 class="text-lg font-semibold">Protección</h3>
+                            <p class="mt-2">Brinda tranquilidad en
+                                momentos difíciles</p>
+                            <a href="#" class="inline-block mt-4 bg-white text-[#4D3A2D] font-bold px-4 py-2 rounded-lg">Ver más</a>
                         </div>
                     </div>
+            
                     <!-- Carta 3 -->
-                    <div class="contenedor-cartas swiper-slide bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://via.placeholder.com/400x300" alt="Image 3" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold">Título de la Carta 3</h3>
-                            <p class="mt-2">Descripción breve de la carta 3.</p>
-                            <a href="#" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">Ver más</a>
+                    <div class="contenedor-cartas swiper-slide rounded-xl overflow-hidden shadow-lg bg-transparent relative">
+                        <img src="assets/img/persona3.jpeg" alt="Image 3" class="w-full h-80 object-cover">
+                        <div class="text-center absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-10 rounded-lg">
+                            <h3 class="text-lg font-semibold">Inversión</h3>
+                            <p class="mt-2">Crece tu patrimonio
+                                con atractivos</p>
+                            <a href="#" class="inline-block mt-4 bg-white text-[#4D3A2D] font-bold px-4 py-1 rounded-lg">Ver más</a>
                         </div>
                     </div>
+            
                     <!-- Carta 4 -->
-                    <div class="contenedor-cartas swiper-slide bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://via.placeholder.com/400x300" alt="Image 4" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold">Título de la Carta 4</h3>
-                            <p class="mt-2">Descripción breve de la carta 4.</p>
-                            <a href="#" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">Ver más</a>
+                    <div class="contenedor-cartas swiper-slide rounded-xl overflow-hidden shadow-lg bg-transparent relative">
+                        <img src="assets/img/Rectangle 282 (1).png" alt="Image 4" class="w-full h-80 object-cover">
+                        <div class="text-center absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-10 rounded-lg">
+                            <h3 class="text-lg font-semibold">Retiro</h3>
+                            <p class="mt-2">Para un futuro sin
+                                preocupaciones</p>
+                            <a href="#" class="inline-block mt-4 bg-white text-[#4D3A2D] font-bold px-4 py-1 rounded-lg">Ver más</a>
                         </div>
                     </div>
+            
                     <!-- Carta 5 -->
-                    <div class="contenedor-cartas swiper-slide bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://via.placeholder.com/400x300" alt="Image 5" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold">Título de la Carta 5</h3>
-                            <p class="mt-2">Descripción breve de la carta 5.</p>
-                            <a href="#" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">Ver más</a>
+                    <div class="contenedor-cartas swiper-slide rounded-xl overflow-hidden shadow-lg bg-transparent relative">
+                        <img src="assets/img/Rectangle 292.png" alt="Image 5" class="w-full h-80 object-cover">
+                        <div class="text-center absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-10 rounded-lg">
+                            <h3 class="text-lg font-semibold">Educación</h3>
+                            <p class="mt-2">Asegura un futuro brillante para tus hijos</p>
+                            <a href="#" class="inline-block mt-4 bg-white text-[#4D3A2D] font-bold px-4 py-1 rounded-lg">Ver más</a>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Botones de navegación centrados justo debajo de "Crece" -->
-            <div class="navigation-buttons">
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
-        </section>
-    </main>
+            
+           
+            
 
-    <footer>
-        <!-- Footer aquí -->
+        </section>
+
+    </main>
+    <section>
+        <div class="video up">
+            <iframe class="left rounded-xl" width="560" height="315"
+                src="https://www.youtube.com/embed/-CD8tVQt99E?si=QcMCxwwdZ-A0oum_" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="guia">
+
+        <h2 class="text-center padding upper down">TU GUÍA A UN FUTURO SEGURO <span>CON ANDANA</span></h2>
+        <div class="contenedor-guia">
+            <div class="guia-img left">
+                <img class="rounded-xl" src="assets/img/persona4.png" alt="Image 1">
+
+            </div>
+            
+            <div>
+                <p class="padding text-center left">Soy Andrés Aramburo, mi misión es ayudarte a proteger tu futuro y el de tus seres queridos.</p>
+                <div class="flex-row right">
+                    <svg width="62" height="60" viewBox="0 0 62 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.4182 59.1818L16.0636 50.1636L5.91818 47.9091L6.90455 37.4818L0 29.5909L6.90455 21.7L5.91818 11.2727L16.0636 9.01818L21.4182 0L31 4.08636L40.5818 0L45.9364 9.01818L56.0818 11.2727L55.0955 21.7L62 29.5909L55.0955 37.4818L56.0818 47.9091L45.9364 50.1636L40.5818 59.1818L31 55.0955L21.4182 59.1818ZM23.8136 51.9955L31 48.8955L38.3273 51.9955L42.2727 45.2318L50.0227 43.4L49.3182 35.5091L54.5318 29.5909L49.3182 23.5318L50.0227 15.6409L42.2727 13.95L38.1864 7.18636L31 10.2864L23.6727 7.18636L19.7273 13.95L11.9773 15.6409L12.6818 23.5318L7.46818 29.5909L12.6818 35.5091L11.9773 43.5409L19.7273 45.2318L23.8136 51.9955ZM28.0409 39.5955L43.9636 23.6727L40.0182 19.5864L28.0409 31.5636L21.9818 25.6455L18.0364 29.5909L28.0409 39.5955Z" fill="#5C402B"/>
+                        </svg>
+                    <p>Certificado por la Comisión Nacional de Seguros y Fianzas.</p>
+                    <div class="flex-row">
+                        <svg width="46" height="47" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.2002 0.699951H0V15.8996H3.80019V4.49957H15.2002V0.699951Z" fill="#5C402B"/>
+                            <path d="M45.6006 15.8996V0.699951H30.4004V4.49957H41.8004V15.8996H45.6006Z" fill="#5C402B"/>
+                            <path d="M30.4004 46.2999H45.6006V31.0997H41.8004V42.4997H30.4004V46.2999Z" fill="#5C402B"/>
+                            <path d="M0 31.0997V46.2999H15.2002V42.4997H3.80019V31.0997H0Z" fill="#5C402B"/>
+                            <path d="M22.7995 8.30029C18.6989 8.30029 15.8934 11.6103 16.5666 15.659L17.5852 21.7888C17.9939 24.2158 20.3388 26.2051 22.799 26.2051C25.2608 26.2051 27.6046 24.2158 28.011 21.7888L29.0319 15.659C29.7091 11.6103 26.9035 8.30029 22.7995 8.30029Z" fill="#5C402B"/>
+                            <path d="M35.5969 29.0312L28.4553 26.6503C26.9562 28.1181 24.939 29.0552 22.7998 29.0552C20.6583 29.0552 18.6416 28.1181 17.1425 26.6503L10.0027 29.0312C8.67976 29.4724 7.59961 30.9738 7.59961 32.3674V38.7001H38V32.3674C38 30.9738 36.9198 29.473 35.5969 29.0312Z" fill="#5C402B"/>
+                            </svg>
+                            
+                        <p>Cédula #C343501</p>
+             
+                
+                </div>
+
+            </div>
+            <div class="cont-txt">
+                
+                <button class="boton up">AGENDA UNA ASESORÍA</button>
+               
+                
+        </div>
+
+    </section>
+    <footer class="down ">
+       <div class="flex-col">
+        <img src="assets/img/footer.png" alt="">
+        
+        <div class="redes flex-row justify-center">
+            <a href=""><img src="assets/img/insta.png" alt=""></a>
+            <a href=""><img src="assets/img/face.png" alt=""></a>
+            <a href=""><img src="assets/img/lin.png" alt=""></a>
+            <a href=""><img src="assets/img/wha.png" alt=""></a>
+        </div>   
+       </div> 
+        
+        
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        const swiper = new Swiper('.mySwiper', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1, // 1 carta en pantallas pequeñas
-                    spaceBetween: 20, // Espacio entre cartas
-                },
-                768: {
-                    slidesPerView: 2, // 2 cartas en pantallas medianas
-                    spaceBetween: 30,
-                },
-                1024: {
-                    slidesPerView: 3, // 3 cartas en pantallas grandes
-                    spaceBetween: 40,
-                },
-            },
-        });
-
-        // Mostrar/ocultar menú en móviles
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+    
+        
     </script>
+  <!-- SwiperJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // Mostrar el contenido después de cargar la página
+    window.onload = function () {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('content').classList.remove('hidden');
+};
+</script>
+
+ <!-- scroll reveal -->
+ <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
